@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paylo | La nueva forma de pagar tus cuentas</title>
+    <meta
+      name="description"
+      content="Paylo es la nueva forma de pagar tus cuentas. Cada pago suma tickets para sorteos mensuales de viajes, autos y premios exclusivos."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="header">
+      <a class="brand" href="#top" aria-label="Paylo">
+        <span class="brand-mark">P</span>
+        <span class="brand-text">Paylo</span>
+      </a>
+      <nav class="nav">
+        <a href="#producto">Producto</a>
+        <a href="#demo">Demo</a>
+        <a href="#rewards">Rewards</a>
+      </nav>
+      <button class="btn btn-primary" id="open-login">Iniciar sesion</button>
+    </header>
+
+    <main id="top">
+      <section class="hero section reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">PAYLO FINTECH PLATFORM</p>
+          <h1>La nueva forma de pagar tus cuentas</h1>
+          <p class="lead">
+            Centraliza servicios, paga en segundos y participa todos los meses por
+            premios como viajes, autos y giftcards premium.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#demo">Ver demo interactiva</a>
+            <button class="btn btn-ghost" id="open-login-hero">Iniciar sesion</button>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <strong>2.347+</strong>
+              <span>usuarios activos</span>
+            </div>
+            <div>
+              <strong>98.7%</strong>
+              <span>pagos exitosos</span>
+            </div>
+            <div>
+              <strong>6.1x</strong>
+              <span>mas recurrencia por rewards</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="pill">Sorteo del mes: 2 viajes + 1 auto</div>
+          <h3>Tu pago tambien juega</h3>
+          <p>
+            Cada vez que pagas con Paylo sumas tickets automaticamente para sorteos
+            mensuales.
+          </p>
+          <ul>
+            <li><span></span>Tickets en tiempo real</li>
+            <li><span></span>Notificaciones de resultados</li>
+            <li><span></span>Historial y transparencia del sorteo</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section trust reveal">
+        <p>Usado por comunidades de pago en Chile y Latam</p>
+        <div class="trust-grid">
+          <span>ENEL</span><span>METROGAS</span><span>ENTEL</span><span>TAG</span>
+          <span>AGUAS ANDINAS</span><span>COMERCIOS PARTNER</span>
+        </div>
+      </section>
+
+      <section id="producto" class="section features reveal">
+        <div class="section-head">
+          <p class="eyebrow">PRODUCTO</p>
+          <h2>Experiencia fintech, simple para usuarios y potente para comercios</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Pago unificado</h3>
+            <p>Paga servicios, autopistas y telecom en un solo flujo, sin friccion.</p>
+          </article>
+          <article>
+            <h3>Seguridad inteligente</h3>
+            <p>Login con Face ID/clave, validaciones anti-fraude y trazabilidad total.</p>
+          </article>
+          <article>
+            <h3>Medios de pago guardados</h3>
+            <p>Configura TC/TD, define predeterminado y paga en 1 tap.</p>
+          </article>
+          <article>
+            <h3>Growth engine</h3>
+            <p>
+              Rewards y sorteos mensuales para aumentar frecuencia de pago y retencion.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo" class="section demo reveal">
+        <div class="section-head">
+          <p class="eyebrow">DEMO INTERACTIVA</p>
+          <h2>Asi funciona Paylo, de login a pago en menos de 1 minuto</h2>
+        </div>
+        <div class="demo-layout">
+          <div class="flow-steps">
+            <button class="step active" data-step="0">
+              <span>1</span>
+              <div>
+                <h4>Inicio seguro</h4>
+                <p>Face ID o clave para acceder.</p>
+              </div>
+            </button>
+            <button class="step" data-step="1">
+              <span>2</span>
+              <div>
+                <h4>Seleccion de cuentas</h4>
+                <p>Visualizacion clara de montos y vencimientos.</p>
+              </div>
+            </button>
+            <button class="step" data-step="2">
+              <span>3</span>
+              <div>
+                <h4>Pago con TC/TD</h4>
+                <p>Checkout rapido con pasarela Fintoc o equivalente.</p>
+              </div>
+            </button>
+            <button class="step" data-step="3">
+              <span>4</span>
+              <div>
+                <h4>Rewards y sorteos</h4>
+                <p>Cada pago suma tickets para premios mensuales.</p>
+              </div>
+            </button>
+          </div>
+          <div class="phone" id="phone-demo"></div>
+        </div>
+      </section>
+
+      <section id="rewards" class="section rewards reveal">
+        <div class="section-head">
+          <p class="eyebrow">PAYLO REWARDS</p>
+          <h2>Pagas tus cuentas y participas por premios reales cada mes</h2>
+        </div>
+        <div class="rewards-grid">
+          <article>
+            <h3>Premios flagship</h3>
+            <p>Viajes all inclusive, autos urbanos y giftcards de alto valor.</p>
+          </article>
+          <article>
+            <h3>Transparencia</h3>
+            <p>Tablero de tickets y resultados con historial verificable.</p>
+          </article>
+          <article>
+            <h3>Engagement comercial</h3>
+            <p>Mayor frecuencia de pago y mas retencion de usuarios activos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta reveal">
+        <h2>Listo para mostrar Paylo a comercios y partners</h2>
+        <p>Activa la demo, comparte el link y presenta un producto fintech de nivel startup.</p>
+        <button class="btn btn-primary" id="open-login-cta">Probar demo ahora</button>
+      </section>
+    </main>
+
+    <div class="modal" id="login-modal" aria-hidden="true">
+      <div class="modal-panel">
+        <button class="close" id="close-login" aria-label="Cerrar">x</button>
+        <h3>Entrar a Paylo</h3>
+        <p class="muted">Demo: usa clave <strong>1234</strong> o Face ID simulado.</p>
+        <input id="password-input" type="password" placeholder="Clave" />
+        <button class="btn btn-primary" id="login-password">Ingresar con clave</button>
+        <button class="btn btn-ghost" id="login-faceid">Ingresar con Face ID</button>
+        <p class="error" id="login-error"></p>
+      </div>
+    </div>
+
+    <section class="app-panel" id="app-panel" aria-hidden="true">
+      <div class="app-header">
+        <div>
+          <h3>Paylo Demo</h3>
+          <p>Paga tus cuentas y suma tickets</p>
+        </div>
+        <button class="btn btn-ghost" id="logout">Cerrar sesion</button>
+      </div>
+      <div class="app-body">
+        <div class="accounts" id="accounts"></div>
+        <aside class="checkout">
+          <h4>Checkout</h4>
+          <p id="selected-label">Selecciona una cuenta para pagar</p>
+          <label>Monto</label>
+          <input id="amount" type="number" />
+          <label>Medio de pago</label>
+          <select id="method">
+            <option>Tarjeta de Credito (TC)</option>
+            <option>Tarjeta de Debito (TD)</option>
+          </select>
+          <label>Pasarela</label>
+          <select id="gateway">
+            <option>Fintoc</option>
+            <option>DemoPay</option>
+          </select>
+          <button class="btn btn-primary" id="pay-now">Pagar ahora</button>
+          <p class="error" id="pay-error"></p>
+          <div class="receipt" id="receipt"></div>
+          <div class="tickets" id="tickets-box">Tickets acumulados: <strong id="tickets-count">0</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
