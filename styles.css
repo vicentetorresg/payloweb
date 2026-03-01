@@ -319,7 +319,8 @@ h1 {
 }
 .modal-panel input,
 .checkout input,
-.checkout select {
+.checkout select,
+#search-account {
   width: 100%;
   padding: 11px 12px;
   margin: 8px 0 10px;
@@ -344,11 +345,41 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   padding: 18px 20px;
   border-bottom: 1px solid #e4eef6;
 }
+.app-header-actions { display: flex; gap: 8px; }
 .app-header h3 { margin: 0; }
 .app-header p { margin: 4px 0 0; color: var(--muted); }
+
+.app-controls {
+  display: grid;
+  grid-template-columns: 220px 1fr 260px;
+  gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #e4eef6;
+  background: #f7fbff;
+}
+.selection-total {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+  border: 1px solid #d4e2ee;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.checkline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #355469;
+}
 
 .app-body {
   padding: 18px;
@@ -356,6 +387,7 @@ h1 {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 16px;
 }
+
 .accounts { display: grid; gap: 10px; }
 .account {
   border: 1px solid #dbe8f2;
@@ -363,6 +395,7 @@ h1 {
   padding: 12px;
   background: #fbfdff;
 }
+.account-check { margin-bottom: 8px; }
 .account-head {
   display: flex;
   justify-content: space-between;
@@ -379,6 +412,22 @@ h1 {
   color: #1b5576;
   font-weight: 700;
   cursor: pointer;
+}
+
+.activity {
+  margin-top: 12px;
+  background: #f8fcff;
+  border: 1px solid #dbe8f2;
+  border-radius: 14px;
+  padding: 12px;
+}
+.activity h4 { margin: 0 0 8px; }
+.activity ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #3a5a74;
+  display: grid;
+  gap: 6px;
 }
 
 .checkout {
@@ -426,6 +475,9 @@ h1 {
   .feature-grid,
   .rewards-grid,
   .hero-metrics,
-  .trust-grid { grid-template-columns: 1fr; }
+  .trust-grid,
+  .app-controls { grid-template-columns: 1fr; }
   .hero-card { transform: none; }
+  .selection-total { justify-content: flex-start; }
+  .app-header { flex-direction: column; align-items: flex-start; }
 }
