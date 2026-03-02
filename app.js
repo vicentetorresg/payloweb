@@ -258,8 +258,8 @@ function openApp() {
 }
 
 const loginPasswordButton = document.getElementById("login-password");
+const passwordInput = document.getElementById("password-input");
 loginPasswordButton.addEventListener("click", () => {
-  const passwordInput = document.getElementById("password-input");
   const password = passwordInput.value;
   if (password !== "1234") {
     loginError.textContent = "Clave incorrecta. Usa 1234.";
