@@ -257,14 +257,23 @@ function openApp() {
   refreshTickets();
 }
 
-document.getElementById("login-password").addEventListener("click", () => {
-  const password = document.getElementById("password-input").value;
+const loginPasswordButton = document.getElementById("login-password");
+loginPasswordButton.addEventListener("click", () => {
+  const passwordInput = document.getElementById("password-input");
+  const password = passwordInput.value;
   if (password !== "1234") {
     loginError.textContent = "Clave incorrecta. Usa 1234.";
     return;
   }
   loginError.textContent = "";
   openApp();
+});
+
+passwordInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    loginPasswordButton.click();
+  }
 });
 
 document.getElementById("login-faceid").addEventListener("click", () => {
