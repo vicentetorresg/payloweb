@@ -65,6 +65,15 @@ function methodLabel(item) {
   return `${item.type} · ${item.brand} ****${item.last4}`;
 }
 
+function toggleAccountSelection(id) {
+  if (selectedIds.has(id)) selectedIds.delete(id);
+  else selectedIds.add(id);
+
+  syncSummary();
+  payError.textContent = "";
+  receipt.classList.remove("show");
+}
+
 function syncSummary() {
   const total = selectedAmount();
   selectedTotalEl.textContent = clp(total);
@@ -135,7 +144,8 @@ function renderAccounts() {
 
   filteredAccounts().forEach((item) => {
     const card = document.createElement("article");
-    card.className = "account";
+    card.className = `account${selectedIds.has(item.id) ? " is-selected" : ""}`;
+    card.dataset.id = String(item.id);
     card.innerHTML = `
       <label class="checkline account-check">
         <input type="checkbox" data-id="${item.id}" ${selectedIds.has(item.id) ? "checked" : ""} />
@@ -151,14 +161,21 @@ function renderAccounts() {
     root.appendChild(card);
   });
 
+  root.querySelectorAll("article.account").forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if (event.target.closest("button, input, label")) return;
+
+      const id = Number(card.dataset.id);
+      toggleAccountSelection(id);
+      renderAccounts();
+    });
+  });
+
   root.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
       const id = Number(checkbox.dataset.id);
-      if (checkbox.checked) selectedIds.add(id);
-      else selectedIds.delete(id);
-      syncSummary();
-      payError.textContent = "";
-      receipt.classList.remove("show");
+      toggleAccountSelection(id);
+      renderAccounts();
     });
   });
 

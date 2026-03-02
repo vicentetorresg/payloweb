@@ -683,3 +683,19 @@ h1 {
   font-size: 18px;
   line-height: 1;
 }
+
+.account {
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.account:hover {
+  transform: translateY(-1px);
+  border-color: #b8d9ec;
+}
+
+.account.is-selected {
+  border-color: #57bfd3;
+  box-shadow: 0 8px 18px #1ba6c624;
+  background: #f1fbff;
+}
