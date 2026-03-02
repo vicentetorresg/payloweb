@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paylo App | Cuenta y pagos</title>
+    <meta
+      name="description"
+      content="Accede a tu cuenta Paylo, gestiona medios de pago y paga tus cuentas en segundos."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+
+    <header class="header app-topbar">
+      <a class="brand" href="index.html" aria-label="Paylo">
+        <span class="brand-mark">P</span>
+        <span class="brand-text">Paylo</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#producto">Producto</a>
+        <a href="index.html#demo">Demo</a>
+        <a href="index.html#rewards">Rewards</a>
+      </nav>
+      <a class="btn btn-ghost" href="index.html">Volver al home</a>
+    </header>
+
+    <main class="app-main-wrap">
+      <section class="login-screen" id="login-screen">
+        <div class="login-card">
+          <p class="eyebrow">PAYLO ACCESS</p>
+          <h1>Inicia sesion en tu cuenta</h1>
+          <p class="muted">Demo: ingresa con clave <strong>1234</strong> o con Face ID simulado.</p>
+          <input id="password-input" type="password" placeholder="Clave" />
+          <button class="btn btn-primary" id="login-password">Ingresar con clave</button>
+          <button class="btn btn-ghost" id="login-faceid">Ingresar con Face ID</button>
+          <p class="error" id="login-error"></p>
+        </div>
+      </section>
+
+      <section class="app-panel" id="app-panel" aria-hidden="true">
+        <div class="app-header">
+          <div>
+            <h3>Bienvenido, Vicente</h3>
+            <p>Administra pagos, rewards y medios de pago en un solo lugar</p>
+          </div>
+          <div class="app-header-actions">
+            <button class="btn btn-ghost" id="open-add-account">Agregar cuenta</button>
+            <button class="btn btn-ghost" id="logout">Cerrar sesion</button>
+          </div>
+        </div>
+
+        <div class="view-switch">
+          <button class="view-tab active" data-view="accounts-view">Cuentas</button>
+          <button class="view-tab" data-view="my-account-view">Mi cuenta</button>
+        </div>
+
+        <div id="accounts-view">
+          <div class="app-controls">
+            <label class="checkline">
+              <input type="checkbox" id="select-all" />
+              Seleccionar todas
+            </label>
+            <input id="search-account" type="text" placeholder="Buscar proveedor o cuenta" />
+            <div class="selection-total">Seleccionado: <strong id="selected-total">$0</strong></div>
+          </div>
+
+          <div class="app-body">
+            <div>
+              <div class="accounts" id="accounts"></div>
+              <div class="activity">
+                <h4>Actividad reciente</h4>
+                <ul id="activity-list"></ul>
+              </div>
+            </div>
+
+            <aside class="checkout">
+              <h4>Checkout</h4>
+              <p id="selected-label">Selecciona una o varias cuentas para pagar</p>
+              <label>Monto</label>
+              <input id="amount" type="number" />
+              <label>Medio de pago</label>
+              <select id="method"></select>
+              <label>Pasarela</label>
+              <select id="gateway">
+                <option>Fintoc</option>
+                <option>DemoPay</option>
+              </select>
+              <button class="btn btn-primary" id="pay-now">Pagar seleccionadas</button>
+              <p class="error" id="pay-error"></p>
+              <div class="receipt" id="receipt"></div>
+              <div class="tickets" id="tickets-box">Tickets acumulados: <strong id="tickets-count">0</strong></div>
+            </aside>
+          </div>
+        </div>
+
+        <div id="my-account-view" class="hidden-view">
+          <div class="my-account-grid">
+            <article class="profile-card">
+              <h4>Mi cuenta</h4>
+              <p><strong>Nombre:</strong> Vicente Torres</p>
+              <p><strong>Email:</strong> vicente@paylo.cl</p>
+              <p><strong>Plan:</strong> Paylo Plus</p>
+              <div class="profile-stat">
+                <span>Tickets acumulados</span>
+                <strong id="tickets-count-profile">0</strong>
+              </div>
+              <label class="checkline smart-reminder">
+                <input type="checkbox" id="smart-reminder" checked />
+                Recordatorios inteligentes de vencimiento
+              </label>
+            </article>
+
+            <article class="methods-card">
+              <h4>Medios de pago enrolados</h4>
+              <div id="payment-methods-list" class="methods-list"></div>
+
+              <h5>Agregar nuevo medio</h5>
+              <div class="method-form">
+                <select id="new-method-type">
+                  <option value="TC">Tarjeta de Credito</option>
+                  <option value="TD">Tarjeta de Debito</option>
+                </select>
+                <input id="new-method-brand" type="text" placeholder="Marca (ej: Visa)" />
+                <input id="new-method-last4" type="text" maxlength="4" placeholder="Ultimos 4 digitos" />
+                <input id="new-method-holder" type="text" placeholder="Titular" />
+                <button class="btn btn-primary" id="save-method">Guardar medio de pago</button>
+                <p class="error" id="method-error"></p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="modal" id="add-account-modal" aria-hidden="true">
+        <div class="modal-panel">
+          <button class="close" id="close-add-account" aria-label="Cerrar">x</button>
+          <h3>Agregar nueva cuenta</h3>
+          <input id="new-provider" type="text" placeholder="Proveedor (ej: VTR)" />
+          <input id="new-account" type="text" placeholder="Numero de cuenta" />
+          <input id="new-amount" type="number" placeholder="Monto CLP" />
+          <input id="new-due" type="text" placeholder="Vence (ej: 15 mar)" />
+          <button class="btn btn-primary" id="save-account">Guardar cuenta</button>
+          <p class="error" id="add-account-error"></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

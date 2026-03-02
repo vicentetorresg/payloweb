@@ -481,3 +481,176 @@ h1 {
   .selection-total { justify-content: flex-start; }
   .app-header { flex-direction: column; align-items: flex-start; }
 }
+
+.app-main-wrap {
+  width: min(1140px, 92vw);
+  margin: 24px auto 70px;
+}
+
+.app-topbar {
+  position: sticky;
+  top: 0;
+}
+
+.login-screen {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 150px);
+}
+
+.login-card {
+  width: min(500px, 92vw);
+  background: #fff;
+  border: 1px solid #dbe8f2;
+  border-radius: 20px;
+  box-shadow: 0 20px 36px #0c2b4b26;
+  padding: 24px;
+}
+
+.login-card h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+.login-card input,
+.method-form select,
+.method-form input {
+  width: 100%;
+  padding: 11px 12px;
+  margin: 8px 0 10px;
+  border: 1px solid #d4e1eb;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.view-switch {
+  display: flex;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e4eef6;
+  background: #f3f8fd;
+}
+
+.view-tab {
+  border: 1px solid #d1e0eb;
+  background: #fff;
+  color: #2d4a60;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.view-tab.active {
+  color: #fff;
+  border-color: #2f8ed1;
+  background: linear-gradient(130deg, var(--primary-2), var(--primary));
+}
+
+.hidden-view {
+  display: none;
+}
+
+.my-account-grid {
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 16px;
+}
+
+.profile-card,
+.methods-card {
+  background: #f8fcff;
+  border: 1px solid #dbe8f2;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.profile-card h4,
+.methods-card h4 {
+  margin: 0 0 12px;
+}
+
+.profile-card p {
+  margin: 0 0 8px;
+  color: #38526a;
+}
+
+.profile-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d3e4ef;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.smart-reminder {
+  margin-top: 12px;
+}
+
+.methods-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.method-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #dbe8f2;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+}
+
+.method-item small {
+  display: block;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.method-actions button {
+  border: 1px solid #b6d8ed;
+  background: #eaf7ff;
+  color: #1a5b7b;
+  border-radius: 9px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.method-default {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0d7d59;
+  background: #dff7ee;
+  border: 1px solid #b8e6d6;
+}
+
+.method-form h5,
+.methods-card h5 {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #37536a;
+}
+
+@media (max-width: 980px) {
+  .my-account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .view-switch {
+    flex-wrap: wrap;
+  }
+}
