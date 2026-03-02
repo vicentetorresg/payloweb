@@ -654,3 +654,32 @@ h1 {
     flex-wrap: wrap;
   }
 }
+
+.store-note {
+  margin-top: 12px;
+}
+
+.store-note-center {
+  display: flex;
+  justify-content: center;
+}
+
+.appstore-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #0a0f18;
+  color: #fff;
+  border: 1px solid #202737;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 20px #060a1230;
+}
+
+.appstore-badge .apple {
+  font-size: 18px;
+  line-height: 1;
+}
