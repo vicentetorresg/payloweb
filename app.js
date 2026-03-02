@@ -48,11 +48,8 @@ const addAccountModal = document.getElementById("add-account-modal");
 const methodError = document.getElementById("method-error");
 
 function clp(value) {
-  return new Intl.NumberFormat("es-CL", {
-    style: "currency",
-    currency: "CLP",
-    maximumFractionDigits: 0
-  }).format(value);
+  const rounded = Math.max(0, Math.round(Number(value) || 0));
+  return `$${rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
 }
 
 function renderProviderOptions() {
@@ -102,7 +99,7 @@ function toggleAccountSelection(id) {
 function syncSummary() {
   const total = selectedAmount();
   selectedTotalEl.textContent = clp(total);
-  amountInput.value = total || "";
+  amountInput.value = clp(total);
 
   if (selectedIds.size === 0) {
     selectedLabel.textContent = "Selecciona una o varias cuentas para pagar";
@@ -363,8 +360,7 @@ document.getElementById("pay-now").addEventListener("click", () => {
     return;
   }
 
-  const typedAmount = Number(amountInput.value);
-  const amount = Number.isFinite(typedAmount) && typedAmount > 0 ? typedAmount : selectedAmount();
+  const amount = selectedAmount();
   const method = document.getElementById("method").value;
   const gateway = document.getElementById("gateway").value;
 
