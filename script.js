@@ -1,8 +1,8 @@
 const demoSteps = [
   {
-    title: "Login seguro",
-    copy: "Los usuarios entran con Face ID o clave. Acceso rapido y protegido.",
-    extra: "Time to login: 4 segundos"
+    title: "Ingreso seguro",
+    copy: "Las personas ingresan con Face ID o clave. Acceso rapido y protegido.",
+    extra: "Tiempo de ingreso: 4 segundos"
   },
   {
     title: "Seleccion flexible",
@@ -10,14 +10,14 @@ const demoSteps = [
     extra: "Seleccion masiva + filtros"
   },
   {
-    title: "Pago en 1 flujo",
-    copy: "Seleccionas TC/TD y pagas lote completo con pasarela integrada.",
-    extra: "Pasarela: Fintoc"
+    title: "Pago en un solo flujo",
+    copy: "Eliges TC/TD y pagas todas las cuentas seleccionadas en un solo paso.",
+    extra: "Pasarela integrada"
   },
   {
-    title: "Rewards activos",
+    title: "Premios activos",
     copy: "Cada pago suma tickets para sorteos mensuales: viajes, autos y giftcards.",
-    extra: "Engagement: +34%"
+    extra: "Participacion automatica"
   }
 ];
 
@@ -34,7 +34,7 @@ function renderDemo(index) {
     <p style="margin-top: 14px; color: #66d4ff; font-weight: 700;">${item.extra}</p>
     <div style="margin-top: 16px; border-radius: 12px; border: 1px solid #2f5776; padding: 11px; background: #0f2640;">
       <small style="color:#8fc6e9">Demo Paylo</small>
-      <div style="margin-top:6px; color:#fff; font-weight:700;">Experiencia fintech para pagos recurrentes</div>
+      <div style="margin-top:6px; color:#fff; font-weight:700;">Experiencia digital para pagos recurrentes</div>
     </div>
   `;
 

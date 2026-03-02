@@ -6,7 +6,7 @@
     <title>Paylo App | Cuenta y pagos</title>
     <meta
       name="description"
-      content="Accede a tu cuenta Paylo, gestiona medios de pago y paga tus cuentas en segundos."
+      content="Accede a tu cuenta Paylo, gestiona tus medios de pago y paga todas tus cuentas en segundos."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
       <nav class="nav">
         <a href="index.html#producto">Producto</a>
         <a href="index.html#demo">Demo</a>
-        <a href="index.html#rewards">Rewards</a>
+        <a href="index.html#rewards">Premios</a>
       </nav>
       <a class="btn btn-ghost" href="index.html">Volver al home</a>
     </header>
@@ -35,9 +35,9 @@
     <main class="app-main-wrap">
       <section class="login-screen" id="login-screen">
         <div class="login-card">
-          <p class="eyebrow">PAYLO ACCESS</p>
+          <p class="eyebrow">ACCESO PAYLO</p>
           <h1>Inicia sesion en tu cuenta</h1>
-          <p class="muted">Demo: ingresa con clave <strong>1234</strong> o con Face ID simulado.</p>
+          <p class="muted">Demo: usa clave <strong>1234</strong> o Face ID simulado.</p>
           <input id="password-input" type="password" placeholder="Clave" />
           <button class="btn btn-primary" id="login-password">Ingresar con clave</button>
           <button class="btn btn-ghost" id="login-faceid">Ingresar con Face ID</button>
@@ -49,7 +49,7 @@
         <div class="app-header">
           <div>
             <h3>Bienvenido, Vicente</h3>
-            <p>Administra pagos, rewards y medios de pago en un solo lugar</p>
+            <p>Gestiona tus pagos, premios y medios de pago desde un solo panel</p>
           </div>
           <div class="app-header-actions">
             <button class="btn btn-ghost" id="open-add-account">Agregar cuenta</button>
@@ -82,7 +82,7 @@
             </div>
 
             <aside class="checkout">
-              <h4>Checkout</h4>
+              <h4>Resumen de pago</h4>
               <p id="selected-label">Selecciona una o varias cuentas para pagar</p>
               <label>Monto</label>
               <input id="amount" type="number" />
@@ -114,7 +114,7 @@
               </div>
               <label class="checkline smart-reminder">
                 <input type="checkbox" id="smart-reminder" checked />
-                Recordatorios inteligentes de vencimiento
+                Recordatorios automaticos de vencimiento
               </label>
             </article>
 
