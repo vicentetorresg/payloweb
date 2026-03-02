@@ -11,6 +11,22 @@ let paymentMethods = [
   { id: 2, type: "TD", brand: "Santander", last4: "8891", holder: "Vicente Torres", isDefault: false }
 ];
 
+const availableProviders = [
+  "Aguas Andinas",
+  "Claro",
+  "CGE",
+  "DirecTV",
+  "Enel",
+  "Entel",
+  "Lipigas",
+  "MetroGAS",
+  "Movistar",
+  "Mundo Pacifico",
+  "TAG",
+  "VTR",
+  "WOM"
+];
+
 let selectedIds = new Set();
 let tickets = 0;
 let activity = [];
@@ -37,6 +53,15 @@ function clp(value) {
     currency: "CLP",
     maximumFractionDigits: 0
   }).format(value);
+}
+
+function renderProviderOptions() {
+  const providerSelect = document.getElementById("new-provider");
+  if (!providerSelect) return;
+
+  const options = ['<option value="">Selecciona un comercio</option>']
+    .concat(availableProviders.map((provider) => `<option value="${provider}">${provider}</option>`));
+  providerSelect.innerHTML = options.join("");
 }
 
 function selectedAccounts() {
@@ -283,14 +308,14 @@ addAccountModal.addEventListener("click", (event) => {
 });
 
 document.getElementById("save-account").addEventListener("click", () => {
-  const provider = document.getElementById("new-provider").value.trim();
+  const provider = document.getElementById("new-provider").value;
   const account = document.getElementById("new-account").value.trim();
   const amount = Number(document.getElementById("new-amount").value);
   const due = document.getElementById("new-due").value.trim() || "15 mar";
   const error = document.getElementById("add-account-error");
 
   if (!provider || !account || !Number.isFinite(amount) || amount <= 0) {
-    error.textContent = "Completa proveedor, cuenta y monto valido.";
+    error.textContent = "Selecciona comercio, cuenta y monto valido.";
     return;
   }
 
@@ -388,3 +413,5 @@ document.querySelectorAll(".view-tab").forEach((button) => {
     document.getElementById("my-account-view").classList.toggle("hidden-view", target !== "my-account-view");
   });
 });
+
+renderProviderOptions();

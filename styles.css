@@ -318,6 +318,7 @@ h1 {
   cursor: pointer;
 }
 .modal-panel input,
+.modal-panel select,
 .checkout input,
 .checkout select,
 #search-account {
